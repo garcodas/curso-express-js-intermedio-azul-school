@@ -1,13 +1,5 @@
+import { users } from "../data/users.js";
 import newId from "../utils/newId.js";
-
-const users = [
-  {
-    id: 1,
-    name: "Emanuel",
-    email: "emanuel@example.com",
-    password: "123$",
-  },
-];
 
 const login = (email, password) => {
   const user = users.find((u) => u.email === email && u.password === password);
@@ -24,6 +16,7 @@ const register = (email, password, name) => {
       name,
       email,
       password,
+      role: "S",
     };
 
     users.push(newUser);

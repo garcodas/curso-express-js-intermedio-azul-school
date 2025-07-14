@@ -2,9 +2,14 @@ api
     | --> auth
         | --> login (POST)
         | --> register (POST)
+            | --> Todos los usuarios deben nacer con rol estudiante (Done)
         | --> reset-password (POST)
-    | --> users
-        | --> /asign-role (POST)
+    | --> user
+        | --> /assign-role (POST)
+            | --> Debe recibir un userId  y asginar el rol de profesor (Done)
+            | --> Debe cambiar el rol a profesor (Done)
+            | --> Debe recibir y crear el perfil de profesor(Done)
+            | --> Debe retornar el perfil de profesor (Done)
     | --> courses/
         | --> (GET)
         | --> (POST)

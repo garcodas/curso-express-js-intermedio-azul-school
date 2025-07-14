@@ -3,7 +3,6 @@ import registerSchema from "../schemas/auth/register.schema.js";
 import * as AuthService from "../services/authService.js";
 const login = (req, res) => {
   const { error } = loginSchema.validate(req.body || {});
-
   if (error) {
     return res
       .status(400)
