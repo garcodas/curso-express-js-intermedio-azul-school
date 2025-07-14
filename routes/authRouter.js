@@ -1,5 +1,9 @@
 import express from "express";
-import { login, register } from "../controllers/authController.js";
+import {
+  login,
+  register,
+  resetPassword,
+} from "../controllers/authController.js";
 
 // Acá se crea el router
 const router = express.Router();
@@ -13,6 +17,10 @@ router.post("/login", login);
 // www.example.com/api/auth/register
 // www.facebook.com/api/auth/resgister
 router.post("/register", register);
+
+// www.example.com/api/auth/reset-password
+// www.facebook.com/api/auth/reset-password
+router.post("/reset-password", resetPassword);
 
 //exportar el router
 export default router;

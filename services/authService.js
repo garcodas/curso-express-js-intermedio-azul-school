@@ -35,4 +35,21 @@ const register = (email, password, name) => {
   }
 };
 
-export { login, register };
+const resetPassword = (email, password) => {
+  try {
+    const user = users.find((u) => u.email === email);
+
+    if (!user) {
+      return null;
+    }
+
+    user.password = password;
+
+    return user;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+export { login, register, resetPassword };

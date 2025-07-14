@@ -2,15 +2,15 @@ api
     | --> auth
         | --> login (POST)
         | --> register (POST)
-        | --> forgot-password (POST)
+        | --> reset-password (POST)
     | --> users
-        | --> asign-role (POST)
-    | --> courses
+        | --> /asign-role (POST)
+    | --> courses/
         | --> (GET)
         | --> (POST)
         | --> (DELETE)
         | --> (PATCH)
-        | --> by-teacher
+        | --> by-teacher (GET)
     | --> enrollments
         | --> grades (POST)
         | --> get-progress (GET)

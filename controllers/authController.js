@@ -42,4 +42,24 @@ const register = (req, res) => {
   return res.json({ message: "Register successfully", user });
 };
 
-export { login, register };
+const resetPassword = (req, res) => {
+  const { error } = loginSchema.validate(req.body || {});
+
+  if (error) {
+    return res
+      .status(400)
+      .json({ errors: error.details.map((err) => err.message) });
+  }
+
+  const { email, password } = req.body;
+
+  const user = AuthService.resetPassword(email, password);
+
+  if (!user) {
+    return res.status(500).json({ error: "Algo salió mal, intente más tarde" });
+  }
+
+  return res.json({ message: "Reset password successfully", user });
+};
+
+export { login, register, resetPassword };
