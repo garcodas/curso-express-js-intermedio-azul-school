@@ -1,0 +1,19 @@
+api
+    | --> auth
+        | --> login (POST)
+        | --> register (POST)
+        | --> forgot-password (POST)
+    | --> users
+        | --> asign-role (POST)
+    | --> courses
+        | --> (GET)
+        | --> (POST)
+        | --> (DELETE)
+        | --> (PATCH)
+        | --> by-teacher
+    | --> enrollments
+        | --> grades (POST)
+        | --> get-progress (GET)
+        | --> save-progress (POST)
+
+    
