@@ -1,3 +1,5 @@
+import newId from "../utils/newId.js";
+
 const users = [
   {
     id: 1,
@@ -13,4 +15,24 @@ const login = (email, password) => {
   return user || null;
 };
 
-export { login };
+const register = (email, password, name) => {
+  try {
+    const id = newId(users);
+
+    const newUser = {
+      id,
+      name,
+      email,
+      password,
+    };
+
+    users.push(newUser);
+
+    return newUser;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+export { login, register };
