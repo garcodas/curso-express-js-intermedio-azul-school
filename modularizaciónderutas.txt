@@ -10,12 +10,12 @@ api
             | --> Debe cambiar el rol a profesor (Done)
             | --> Debe recibir y crear el perfil de profesor(Done)
             | --> Debe retornar el perfil de profesor (Done)
-    | --> courses/
-        | --> (GET)
-        | --> (POST)
-        | --> (DELETE)
-        | --> (PATCH)
-        | --> by-teacher (GET)
+    | --> courses/ Inscribir a nuevos cursos
+        | --> (GET) Obtener Todos los cursos
+        | --> (POST) Crear nuevos cursos (nombre, descripcion)
+        | --> (DELETE) Eliminar nuevos cursos
+        | --> (PATCH) Actualizar el nombre del cursos
+        | --> by-teacher (GET) Obtner los cursos
     | --> enrollments
         | --> grades (POST)
         | --> get-progress (GET)
