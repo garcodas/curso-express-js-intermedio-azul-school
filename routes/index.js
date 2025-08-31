@@ -2,6 +2,8 @@ import express from "express";
 import authRouter from "./authRouter.js";
 import userRouter from "./user.router.js";
 import courseRouter from "./courseRouter.js";
+import gradeRouter from "./gradeRouter.js";
+import courseProgressRouter from "./courseProgressRouter.js";
 
 const mainRouter = express.Router();
 
@@ -14,5 +16,9 @@ mainRouter.use("/auth", authRouter);
 mainRouter.use("/user", userRouter);
 
 mainRouter.use("/course", courseRouter);
+
+mainRouter.use("/grade", gradeRouter);
+
+mainRouter.use("/courseProgress", courseProgressRouter);
 
 export default mainRouter;

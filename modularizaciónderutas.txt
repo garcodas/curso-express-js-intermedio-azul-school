@@ -16,9 +16,10 @@ api
         | --> (DELETE) Eliminar nuevos cursos
         | --> (PATCH) Actualizar el nombre del cursos
         | --> by-teacher (GET) Obtner los cursos
-    | --> enrollments
-        | --> grades (POST)
-        | --> get-progress (GET)
-        | --> save-progress (POST)
+    | --> grade
+        | --> grades (POST) Notas de los cursos
+    | --> courseProgress
+        | --> get-progress (GET) Obtner el progreso de un usyario en un curso
+        | --> save-progress (POST) guardar el progreso de un usuario en un curso
 
     
