@@ -13,8 +13,11 @@ const addCourse = (name, description, teacherId) => {
   }
 };
 
-const getCourses = () => {
+const getCourses = (limit) => {
   try {
+    if (limit) {
+      return courses.slice(0, limit);
+    }
     return courses;
   } catch (error) {
     console.error("Error retrieving courses:", error);

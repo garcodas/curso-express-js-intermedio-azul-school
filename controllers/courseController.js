@@ -44,11 +44,19 @@ const deleteCourse = (req, res) => {
 };
 
 const getCourses = (req, res) => {
-  const courses = CourseService.getCourses();
-  if (!courses) {
-    return res.status(500).json({ error: "Failed to retrieve courses" });
+  try {
+    const { limit } = req.query;
+    console.log("Limit Query Param ===>", limit);
+
+    const courses = CourseService.getCourses(+limit);
+    if (!courses) {
+      return res.status(500).json({ error: "Failed to retrieve courses" });
+    }
+    return res.status(200).json(courses);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error" });
   }
-  return res.status(200).json(courses);
 };
 
 const getCoursesByTeacherId = (req, res) => {

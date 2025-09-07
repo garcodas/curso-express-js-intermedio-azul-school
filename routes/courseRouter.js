@@ -21,8 +21,8 @@ router.patch("/", updateCourse);
 // www.facebook.com/api/course/
 router.delete("/:courseId", deleteCourse);
 
-// www.example.com/api/course/
-// www.facebook.com/api/course/
+// www.example.com/api/course/?sort=asc&page=15&limit=20&category=backend
+// www.facebook.com/api/course/?sort=asc&page=15&limit=20&category=backend
 router.get("/", getCourses);
 
 // www.example.com/api/course/by-teacher/654321
