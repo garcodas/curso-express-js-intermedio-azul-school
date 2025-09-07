@@ -19,14 +19,14 @@ router.patch("/", updateCourse);
 
 // www.example.com/api/course/
 // www.facebook.com/api/course/
-router.delete("/", deleteCourse);
+router.delete("/:courseId", deleteCourse);
 
 // www.example.com/api/course/
 // www.facebook.com/api/course/
 router.get("/", getCourses);
 
-// www.example.com/api/course/teacher/
-// www.facebook.com/api/course/teacher/
-router.get("/by-teacher/", getCoursesByTeacherId);
+// www.example.com/api/course/by-teacher/654321
+// www.facebook.com/api/course/by-teacher/654321
+router.get("/by-teacher/:teacherId", getCoursesByTeacherId);
 
 export default router;

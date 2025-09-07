@@ -15,11 +15,11 @@ api
         | --> (POST) Crear nuevos cursos (nombre, descripcion)
         | --> (DELETE) Eliminar nuevos cursos
         | --> (PATCH) Actualizar el nombre del cursos
-        | --> by-teacher (GET) Obtner los cursos
+        | --> by-teacher (GET) Obtener los cursos
     | --> grade
         | --> grades (POST) Notas de los cursos
     | --> courseProgress
-        | --> get-progress (GET) Obtner el progreso de un usyario en un curso
+        | --> get-progress (GET) Obtener el progreso de un usyario en un curso
         | --> save-progress (POST) guardar el progreso de un usuario en un curso
 
     

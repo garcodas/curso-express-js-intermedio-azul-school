@@ -34,15 +34,13 @@ const updateCourse = (req, res) => {
 };
 
 const deleteCourse = (req, res) => {
-  // const deletedCourse = await deleteCourse(id);
-  // if (!deletedCourse) {
-  //     return res.status(500).json({ error: "Failed to delete course" });
-  // }
-  // return res.status(200).json({ course: deletedCourse });
+  const { courseId } = req.params;
 
-  return res
-    .status(501)
-    .json({ error: "Delete course functionality not implemented yet" });
+  const deletedCourse = CourseService.deleteCourse(+courseId);
+  if (!deletedCourse) {
+    return res.status(500).json({ error: "Failed to delete course" });
+  }
+  return res.status(200).json({ course: deletedCourse });
 };
 
 const getCourses = (req, res) => {
@@ -54,15 +52,18 @@ const getCourses = (req, res) => {
 };
 
 const getCoursesByTeacherId = (req, res) => {
-  // const courses = CourseService.getByTeacherId(teacherId);
-  // if (!courses) {
-  //     return res.status(500).json({ error: "Failed to retrieve courses" });
-  // }
-  // return res.status(200).json({ courses });
+  const { teacherId } = req.params;
 
-  return res.status(501).json({
-    error: "Get courses by teacher ID functionality not implemented yet",
-  });
+  console.log(
+    "Este es el teacherId que se envio en los route params==>",
+    teacherId
+  );
+
+  const courses = CourseService.getByTeacherId(+teacherId);
+  if (!courses) {
+    return res.status(500).json({ error: "Failed to retrieve courses" });
+  }
+  return res.status(200).json(courses);
 };
 
 export {
